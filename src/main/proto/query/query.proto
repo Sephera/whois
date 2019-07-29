@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.whois.query";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "WHI";
+
+package query;
+
+
+service QueryService {
+    rpc Query (QueryRequest) returns (QueryResponse) {
+    }
+}
+
+message QueryRequest {
+    string username = 1;
+}
+
+message QueryResponse {
+    string username = 1;
+    string id = 2;
+    bool status = 3;
+}
